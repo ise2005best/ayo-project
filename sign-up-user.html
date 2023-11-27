@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in as an Admin</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+             <!-- add an action to this form and make it to whatever php page you want to handle the functionality
+                // we added enctype for the file submission
+            so something like this <form method="post" action="sign-up-user.php" enctype="multipart/form-data">
+                then in the code thats where you make your connection to your mysql
+
+                <?php
+// Replace these values with your database connection details 
+$servername = "your_server_name";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database_name";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $first_name = $_POST['first-name'];
+    $last_name = $_POST['last-name'];
+    $date_of_birth = $_POST['date-of-birth']
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password']
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    // add the remaing fields
+    
+    // to check if passwords matches
+    if($confirm_password === $password){
+        // Add this for the file uploading so you insert all into one table
+        i just wanted to show you how its done for better understanding
+        if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        $file_name = $_FILES['file']['name'];
+        $file_size = $_FILES['file']['size'];
+        $file_tmp = $_FILES['file']['tmp_name'];
+
+        // Read the file content
+        $file_content = file_get_contents($file_tmp);
+
+        // Insert file details into the database
+        $sql = "INSERT INTO uploaded_files (file_name, file_size, file_content) VALUES ('$file_name', '$file_size', ?)";
+        $stmt = $conn->prepare($sql);
+
+        // Bind the file content to the prepared statement
+        $stmt->bind_param('b', $file_content);
+
+        if ($stmt->execute()) {
+            echo "File uploaded successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+         // Perform SQL query to insert user data into the database, add the remaining fields to insert in the database including the file details
+    $sql = "INSERT INTO users (firstName, lastName, dateOfBirth, email, password) VALUES ('$first_name', '$last_name', '$date_of_birth', '$username', '$email', '$hashed_password')";
+    }else{
+        echo "Passowrds dont match"
+    }
+
+    // connect your mysql to your code
+    if ($conn->query($sql) === TRUE) {
+        echo "Registration successful! Welcome, $username!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Close the database connection
+$conn->close();
+?>
+
+WE ADD THE DATA FIELDS FRON ALL OF THIS INTO THE USERS TABLE
+
+            -->
+        <h2>Sign Up With Mariata Homes </h2>
+        <div>
+       
+                <label for="first-name">First Name</label>
+
+                <input type='text' class="fields" name="first-name" required>
+
+                <label for="last-name">Last Name</label>
+                <input type='text' class="fields" name="last-name" required>
+
+                <label for="date-of-birth">Date of Birth</label>
+                <input type='date' class="fields" name="date-of-birth" required>
+
+                <label for="email">Email</label>
+                <input type='email' class="fields" name="email" required>
+
+                <label for="telephone">Phone number (if applicable )</label>
+                <input type='number' class="fields" name="password" required>
+
+                <label for="next-of-kin"> Next of Kin (if applicable)</label>
+                <input type="text" class="fields" name="next-of-kin" required>
+
+                <label for="age"> Age </label>
+                <input type="number" class="fields" name="age" required>
+
+                <label for="photograph"> Recent passport photograph</label>
+                <input type="image" class="fields" name="photograph" required>
+
+                <label for="illness"> Any illness</label>
+                <input type="text" class="fields" name="illness" required>
+
+                <label for="address"> Last residence address (if applicable) </label>
+                <input type="text" class="fields" name="residence">
+
+                <label for="recommended source"> Recommended source (By police, prison, immigration)</label>
+                <input type="text" class="fields" name="source" required>
+
+                <label for="recoommended-source-address"> Recommended source address </label>
+                <input type="text" class="fields" name="source-address" required>
+
+                <label for="password"> Password </label>
+                <input type="password" class="password-field" required name="password">
+
+                <label for="confirm-password"> Confirm Password  </label>
+                <input type="password" class="password-field" name="confirm-password" required>
+
+        </div>
+        <div>
+            <button type="submit" class="submit-button">Sign Up</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

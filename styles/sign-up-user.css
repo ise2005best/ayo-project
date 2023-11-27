@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+
+
+body {
+    font-family: 'El Messiri', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+form {  
+    top: 20;
+    left: 20;
+    background-color:rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 380px;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 96vh;
+    overflow-y: scroll;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.fields {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.password-field {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.submit-button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: calc(100% - 16px);
+    height: 40px;
+    color: #F5FBEF;
+    background-color: #1D2743;
+}
+
+.submit-button a:hover {
+    color: #1D2743;
+    background-color: #FE9000;
+    transition: ease-in-out 0.3s;
+}
+
+
+/* Additional styling for better aesthetics */
+body {
+    background-color: #f8f9fa;
+}
+
+form {
+    margin: 20px;
+}
+
+.fields,
+.password-field,
+.submit-button {
+    margin-top: 10px;
+}
+
+.back-button {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+}
+
+.back-button a {
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #F5FBEF;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.back-button a:hover {
+    color: white;
+    background-color: crimson;
+    transition: ease-in-out 0.3s;
+}

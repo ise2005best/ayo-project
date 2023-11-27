@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'El Messiri', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-container {
+    display: flex;
+    height: 100vh; 
+}
+.iframe {
+    flex: 1;
+    height: 100vh;
+}
+
+/* Style for image.html */
+.welcome-image {
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+
+}
+
+/* Style for pages.html */
+.welcome-content {
+    background-image: url("https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-text  {
+    font-size: 75px;
+    position: fixed;
+    top: 32vh;
+    right: 0; 
+    white-space: nowrap;
+    margin-right: 15px;
+}
+.welcome-text1  {
+    font-size: 75px;
+    position: fixed;
+    top: 41vh;
+    right: 0; 
+    white-space: nowrap;
+    margin-right: 15px;
+
+}
+.welcome-text2  {
+    font-size: 75px;
+    position: fixed;
+    top: 49vh;
+    right: 0; 
+    white-space: nowrap;
+    margin-right: 15px;
+
+}
+
+h1 {
+    color: #172447;
+    font-family: 'El Messiri', sans-serif;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #F5FBEF;
+    background-color: #1D2743;
+    border-radius: 5px;
+}
+
+.buttons a:hover {
+    color: #1D2743;
+    background-color: #FE9000;
+    transition: ease-in-out 0.3s;
+}
+

@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up Admin</title>
+    <title>Register Admin</title>
+    <link rel="stylesheet" href="styles/login-user.css">
+
 </head>
+
 <body>
+    <div class="back-button">
+        <a href="pages.html">Back to Pages</a>
+    </div>
+    <!-- 
+        Do the same thing i spoke about in sign-up user
+        Note create two tables 
+        one called users and the other called admin
+    -->
     <form action="#" method="post">
-        <h2>Sign Up As an Admin </h2>
+        <h2>Register Admin</h2>
+        <div>
+            <label for="username"> ADMIN USERNAME </label>
+            <input type="text" class="username-field" name="admin-username" required>
 
+            <label for="email">EMAIL:</label>
 
-        <label for="email">Email:</label>
-        <input type="email" class="email-field" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" class="password-field" name="password" required>
-        <button type="submit" class="submit-button">Sign Up</button>
+            <input type="email" class="email-field" name="email" required>
+
+            <label for="password">PASSWORD:</label>
+            <input type="password" class="password-field" name="password" required>
+
+            <label for="password">CONFRIM PASSWORD:</label>
+            <input type="password" class="password-field" name="confirm-password" required>
+
+        </div>
+        <div>
+            <button type="submit" class="submit-button">Sign Up</button>
+        </div>
+
     </form>
 
 </body>
+
 </html>
